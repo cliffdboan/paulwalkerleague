@@ -1,0 +1,7 @@
+# Force HTTPS
+http://paulwalkerleague.com/* https://paulwalkerleague.com/:splat 301!
+http://www.paulwalkerleague.com/* https://paulwalkerleague.com/:splat 301!
+https://www.paulwalkerleague.com/* https://paulwalkerleague.com/:splat 301!
+
+# 404 fallback
+/* /index.html 404
