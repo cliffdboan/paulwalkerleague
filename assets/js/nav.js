@@ -10,11 +10,11 @@ class NavigationManager {
                 icon: 'fas fa-user-check',
                 dropdown: true,
                 items: [
-                    { href: 'keeper-rules.html', text: 'Keeper Rules', icon: 'fas fa-book' },
-                    { href: 'keeper-tracker.html', text: 'Keeper Tracker', icon: 'fas fa-table' }
+                    { href: './pages/keeper-rules.html', text: 'Keeper Rules', icon: 'fas fa-book' },
+                    { href: './pages/keeper-tracker.html', text: 'Keeper Tracker', icon: 'fas fa-table' }
                 ]
             },
-            { href: 'history.html', text: 'History', icon: 'fas fa-history' },
+            { href: './pages/history.html', text: 'History', icon: 'fas fa-history' },
             { href: 'index.html#announcements', text: 'Announcements', icon: 'fas fa-bullhorn' }
             // Polls commented out as per user changes
             // { href: 'index.html#polls', text: 'Polls', icon: 'fas fa-poll' }
@@ -44,13 +44,13 @@ class NavigationManager {
         if (href === 'index.html' && this.currentPage === 'home') {
             return true;
         }
-        if (href === 'keeper-rules.html' && this.currentPage === 'keeper-rules') {
+        if (href === './pages/keeper-rules.html' && this.currentPage === 'keeper-rules') {
             return true;
         }
-        if (href === 'keeper-tracker.html' && this.currentPage === 'keeper-tracker') {
+        if (href === './pages/keeper-tracker.html' && this.currentPage === 'keeper-tracker') {
             return true;
         }
-        if (href === 'history.html' && this.currentPage === 'history') {
+        if (href === './pages/history.html' && this.currentPage === 'history') {
             return true;
         }
         return false;
@@ -128,8 +128,8 @@ class NavigationManager {
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <a href="index.html#rules">Rules</a>
-                <a href="keeper-rules.html">Keepers</a>
-                <a href="keeper-tracker.html">Keeper Tracker</a>
+                <a href="./pages/keeper-rules.html">Keepers</a>
+                <a href="./pages/keeper-tracker.html">Keeper Tracker</a>
                 <a href="index.html#announcements">Announcements</a>
             </div>
             <div class="footer-section">
