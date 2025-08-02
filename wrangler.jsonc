@@ -1,3 +1,23 @@
 {
-    "name": "paulwalkerleague"
+    "name": "paulwalkerleague",
+    "compatibility_date": "2024-01-01",
+    "pages_build_output_dir": "./",
+    "send_metrics": false,
+    "rules": [
+        {
+            "type": "Text",
+            "globs": ["**/*.html"],
+            "fallthrough": false
+        },
+        {
+            "type": "Text",
+            "globs": ["**/*.css"],
+            "fallthrough": false
+        },
+        {
+            "type": "Text",
+            "globs": ["**/*.js"],
+            "fallthrough": false
+        }
+    ]
 }
