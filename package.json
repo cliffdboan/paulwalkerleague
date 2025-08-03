@@ -1,0 +1,13 @@
+{
+  "name": "paul-walker-league",
+  "version": "1.0.0",
+  "description": "Paul Walker Memorial Fantasy Football League website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "dev": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000"
+  },
+  "keywords": ["fantasy-football", "static-site", "cloudflare-pages"],
+  "author": "Paul Walker League",
+  "license": "MIT"
+}
