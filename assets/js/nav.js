@@ -2,25 +2,34 @@
 class NavigationManager {
     constructor() {
         this.currentPage = this.getCurrentPage();
+        this.basePath = this.getBasePath();
         this.navItems = [
-            { href: './index.html', text: 'Home', icon: 'fas fa-home' },
-            { href: 'index.html#rules', text: 'Rules', icon: 'fas fa-gavel' },
+            { href: `${this.basePath}index.html`, text: 'Home', icon: 'fas fa-home' },
+            { href: `${this.basePath}index.html#rules`, text: 'Rules', icon: 'fas fa-gavel' },
             {
                 text: 'Keepers',
                 icon: 'fas fa-user-check',
                 dropdown: true,
                 items: [
-                    { href: './pages/keeper-rules.html', text: 'Keeper Rules', icon: 'fas fa-book' },
-                    { href: './pages/keeper-tracker.html', text: 'Keeper Tracker', icon: 'fas fa-table' }
+                    { href: `${this.basePath}pages/keeper-rules.html`, text: 'Keeper Rules', icon: 'fas fa-book' },
+                    { href: `${this.basePath}pages/keeper-tracker.html`, text: 'Keeper Tracker', icon: 'fas fa-table' }
                 ]
             },
-            { href: './pages/history.html', text: 'History', icon: 'fas fa-history' },
-            { href: 'index.html#announcements', text: 'Announcements', icon: 'fas fa-bullhorn' }
+            { href: `${this.basePath}pages/history.html`, text: 'History', icon: 'fas fa-history' },
+            { href: `${this.basePath}index.html#announcements`, text: 'Announcements', icon: 'fas fa-bullhorn' }
             // Polls commented out as per user changes
             // { href: 'index.html#polls', text: 'Polls', icon: 'fas fa-poll' }
         ];
 
         this.init();
+    }
+
+    getBasePath() {
+        const path = window.location.pathname;
+        if (path.includes('/pages/')) {
+            return '../';
+        }
+        return './';
     }
 
     getCurrentPage() {
@@ -41,16 +50,16 @@ class NavigationManager {
     }
 
     isActive(href) {
-        if (href === 'index.html' && this.currentPage === 'home') {
+        if (href.includes('index.html') && this.currentPage === 'home') {
             return true;
         }
-        if (href === './pages/keeper-rules.html' && this.currentPage === 'keeper-rules') {
+        if (href.includes('keeper-rules.html') && this.currentPage === 'keeper-rules') {
             return true;
         }
-        if (href === './pages/keeper-tracker.html' && this.currentPage === 'keeper-tracker') {
+        if (href.includes('keeper-tracker.html') && this.currentPage === 'keeper-tracker') {
             return true;
         }
-        if (href === './pages/history.html' && this.currentPage === 'history') {
+        if (href.includes('history.html') && this.currentPage === 'history') {
             return true;
         }
         return false;
@@ -127,10 +136,10 @@ class NavigationManager {
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="index.html#rules">Rules</a>
-                <a href="./pages/keeper-rules.html">Keepers</a>
-                <a href="./pages/keeper-tracker.html">Keeper Tracker</a>
-                <a href="index.html#announcements">Announcements</a>
+                <a href="${this.basePath}index.html#rules">Rules</a>
+                <a href="${this.basePath}pages/keeper-rules.html">Keepers</a>
+                <a href="${this.basePath}pages/keeper-tracker.html">Keeper Tracker</a>
+                <a href="${this.basePath}index.html#announcements">Announcements</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
