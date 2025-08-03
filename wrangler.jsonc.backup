@@ -2,7 +2,6 @@
     "name": "paul-walker-league-worker",
     "compatibility_date": "2025-01-15",
     "assets": {
-        "directory": "./"
-    },
-    "preview_urls": true
+        "directory": "./dist"
+    }
 }
