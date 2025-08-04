@@ -50,7 +50,8 @@ class NavigationManager {
     }
 
     isActive(href) {
-        if (href.includes('index.html') && this.currentPage === 'home') {
+        // Only highlight exact page matches, not anchor links
+        if (href.includes('index.html') && !href.includes('#') && this.currentPage === 'home') {
             return true;
         }
         if (href.includes('keeper-rules.html') && this.currentPage === 'keeper-rules') {
@@ -84,34 +85,25 @@ class NavigationManager {
     }
 
     generateLinkHTML(item) {
-        const isActive = this.isActive(item.href);
-        const activeClass = isActive ? ' active' : '';
-
         return `
-            <a href="${item.href}" class="nav-link${activeClass}">
+            <a href="${item.href}" class="nav-link">
                 <i class="${item.icon}"></i>${item.text}
             </a>
         `;
     }
 
     generateDropdownHTML(item) {
-        const isActive = this.isDropdownActive();
-        const activeClass = isActive ? ' active' : '';
-
         let dropdownHTML = `
             <div class="nav-dropdown">
-                <a href="#" class="nav-link${activeClass}">
+                <a href="#" class="nav-link">
                     <i class="${item.icon}"></i>${item.text}
                 </a>
                 <div class="dropdown-menu">
         `;
 
         item.items.forEach(dropdownItem => {
-            const isDropdownActive = this.isActive(dropdownItem.href);
-            const dropdownActiveClass = isDropdownActive ? ' active' : '';
-
             dropdownHTML += `
-                <a href="${dropdownItem.href}" class="dropdown-item${dropdownActiveClass}">
+                <a href="${dropdownItem.href}" class="dropdown-item">
                     <i class="${dropdownItem.icon}"></i>${dropdownItem.text}
                 </a>
             `;
