@@ -702,6 +702,11 @@ a[href^="http"]:not([href*="paulwalkerleague"]):after {
     border: 1px solid rgba(205, 127, 50, 0.2);
 }
 
+.podium-place.toilet {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(139, 69, 19, 0.05));
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
 .podium-place i {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -717,6 +722,10 @@ a[href^="http"]:not([href*="paulwalkerleague"]):after {
 
 .podium-place.third i {
     color: #cd7f32;
+}
+
+.podium-place.toilet i {
+    color: #8b4513;
 }
 
 .podium-place h4 {
@@ -736,6 +745,12 @@ a[href^="http"]:not([href*="paulwalkerleague"]):after {
 .podium-place .owner-name {
     color: #a0a0a0;
     font-size: 0.9rem;
+}
+
+.podium-place .score {
+    color: #daa520;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Responsive Design */
