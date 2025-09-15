@@ -3,3 +3,10 @@ compatibility_date = "2025-01-15"
 
 [assets]
 directory = "./dist"
+
+kv_namespaces = [
+  { binding = "TEAMS_DATA", id = "0b2700af4cc504250956862660cb8406" }
+]
+
+[triggers]
+crons = ["0 0 * * 1"]
